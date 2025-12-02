@@ -1,680 +1,264 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Dr. Sumeet Bajaj | Blockchain & Digital Health</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta
-    name="description"
-    content="Dr. Sumeet Bajaj – PhD in Information Technology. Research and prototypes at the intersection of blockchain, Personal Health Records (PHRs), and Web3 healthcare."
-  />
-  <style>
-    :root {
-      --bg: #050814;
-      --bg-alt: #0b1020;
-      --card: #101629;
-      --card-soft: #151c30;
-      --accent: #4f8cff;
-      --accent-soft: rgba(79, 140, 255, 0.12);
-      --accent-green: #2ecc71;
-      --text: #f7f9ff;
-      --text-muted: #b7bfdc;
-      --border: #262c3f;
-      --tag-bg: #151b2e;
-      --tag-border: #2c3550;
-      --danger: #ff7675;
-      --radius-lg: 18px;
-      --radius-md: 999px;
-      --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.65);
-      --shadow-card: 0 18px 40px rgba(2, 8, 30, 0.8);
-      --font-main: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
-        "Segoe UI", sans-serif;
-    }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dr. Sumeet Bajaj – Blockchain & Digital Health</title>
 
-    * {
-      box-sizing: border-box;
+  <style>
+    /* ------------------------------
+       GLOBAL STYLING
+    ------------------------------ */
+    :root {
+      --font-main: "Inter", Arial, sans-serif;
+      --text: #d7e2ff;
+      --subtext: #9db0d8;
+      --card-bg: rgba(255, 255, 255, 0.04);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --accent: #6aa9ff;
+      --accent2: #8cc0ff;
     }
 
     body {
       margin: 0;
       min-height: 100vh;
       font-family: var(--font-main);
-      background: radial-gradient(circle at top, #151b30 0, #050814 55%, #020412 100%);
+      background: radial-gradient(circle at 30% -10%, #1b2748 0%, #0a0f1e 45%, #030510 100%);
       color: var(--text);
       -webkit-font-smoothing: antialiased;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
+    /* Layout container */
+    .container {
+      width: 84%;
+      max-width: 1300px;
+      margin: auto;
+      padding-top: 40px;
+      padding-bottom: 60px;
     }
 
-    .page {
-      max-width: 1180px;
-      margin: 32px auto 48px;
-      padding: 0 20px 40px;
-    }
-
-    /* Header */
-    .header {
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-      align-items: center;
-      margin-bottom: 18px;
-    }
-
-    .title-block h1 {
+    h1, h2, h3 {
       margin: 0;
-      font-size: 26px;
-      letter-spacing: 0.04em;
+      font-weight: 700;
+      letter-spacing: 0.5px;
     }
 
-    .title-block span {
-      font-size: 14px;
-      color: var(--accent);
-      font-weight: 500;
-      margin-left: 8px;
-      white-space: nowrap;
+    h1 {
+      font-size: 32px;
     }
 
-    .collab-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 12px;
-      padding: 6px 12px;
-      border-radius: 999px;
-      background: rgba(46, 204, 113, 0.09);
-      color: var(--accent-green);
-      border: 1px solid rgba(46, 204, 113, 0.32);
-    }
-
-    .dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: var(--accent-green);
-    }
-
-    /* Layout */
-    .layout {
-      display: grid;
-      grid-template-columns: minmax(0, 2.1fr) minmax(280px, 1.1fr);
-      gap: 20px;
-      aligned-items: start;
-    }
-
-    /* Cards */
-    .card {
-      background: radial-gradient(circle at top left, #1f2742 0, #101629 60%, #070b18 100%);
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow-card);
-      padding: 22px 22px 20px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .card-soft {
-      background: linear-gradient(145deg, #101629 0, #050814 100%);
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow-soft);
-      padding: 18px 20px 18px;
-    }
-
-    .card-header {
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--text-muted);
-      margin-bottom: 10px;
-    }
-
-    /* Hero */
-    .hero-title {
-      font-size: 24px;
-      line-height: 1.25;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-      margin: 0 0 14px;
-    }
-
-    .hero-subtitle {
-      font-size: 14px;
-      line-height: 1.6;
-      color: var(--text-muted);
-      max-width: 620px;
+    h2 {
+      font-size: 22px;
       margin-bottom: 14px;
+      color: #bcd4ff;
     }
 
-    .tag-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 16px;
+    /* ------------------------------
+       CARDS
+    ------------------------------ */
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 18px;
+      padding: 24px 28px;
+      margin-bottom: 22px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.35);
+      backdrop-filter: blur(10px);
     }
 
+    /* ------------------------------
+       TAGS & BUTTONS
+    ------------------------------ */
     .tag {
-      font-size: 11px;
-      padding: 5px 10px;
-      border-radius: var(--radius-md);
-      background: var(--tag-bg);
-      border: 1px solid var(--tag-border);
-      color: var(--text-muted);
-      white-space: nowrap;
-    }
-
-    .tag-strong {
-      border-color: rgba(79, 140, 255, 0.6);
-      color: #c7d6ff;
-    }
-
-    .hero-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 10px;
+      display: inline-block;
+      padding: 5px 12px;
+      font-size: 12px;
+      margin-right: 6px;
+      margin-bottom: 6px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: var(--subtext);
     }
 
     .btn {
-      font-size: 13px;
-      border-radius: var(--radius-md);
-      padding: 9px 15px;
-      border: 1px solid transparent;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      cursor: pointer;
-      transition: all 0.16s ease-out;
-      background: transparent;
-      color: var(--text-muted);
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, var(--accent) 0, #7e9dff 60%, #b2c7ff 100%);
-      color: #050814;
-      font-weight: 600;
-      box-shadow: 0 10px 25px rgba(79, 140, 255, 0.45);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 14px 30px rgba(79, 140, 255, 0.6);
-    }
-
-    .btn-ghost {
-      border-color: var(--border);
-      background: rgba(7, 11, 24, 0.9);
-    }
-
-    .btn-ghost:hover {
-      border-color: rgba(255, 255, 255, 0.14);
-      background: rgba(10, 16, 34, 1);
-    }
-
-    .hero-footnote {
-      font-size: 12px;
-      color: var(--text-muted);
-      margin-top: 4px;
-    }
-
-    /* Sections */
-    .section-title {
-      font-size: 13px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin: 20px 2px 10px;
-    }
-
-    .research-title {
+      display: inline-block;
+      padding: 9px 18px;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 10px;
       font-size: 14px;
-      font-weight: 600;
-      margin-bottom: 6px;
+      text-decoration: none;
+      margin-right: 10px;
+      transition: 0.2s;
     }
 
-    .research-meta {
-      font-size: 12px;
-      color: var(--text-muted);
-      margin-bottom: 8px;
+    .btn:hover {
+      background: var(--accent2);
     }
 
-    .research-body {
-      font-size: 13px;
-      color: var(--text-muted);
-      line-height: 1.6;
-      margin-bottom: 10px;
-    }
-
-    .research-links {
-      font-size: 12px;
+    /* ------------------------------
+       FLEX SECTIONS
+    ------------------------------ */
+    .flex {
       display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 4px;
+      gap: 30px;
+      margin-top: 30px;
     }
 
-    .link-soft {
-      color: #c8d5ff;
-      opacity: 0.86;
+    .left {
+      flex: 2;
     }
 
-    .link-soft:hover {
-      opacity: 1;
-      text-decoration: underline;
+    .right {
+      flex: 1;
     }
 
-    /* Sidebar */
-    .sidebar-block + .sidebar-block {
-      margin-top: 10px;
-    }
-
-    .sidebar-title {
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--text-muted);
-      margin-bottom: 8px;
-    }
-
-    dl.meta {
-      margin: 0;
-      font-size: 13px;
-      color: var(--text-muted);
-    }
-
-    dl.meta dt {
-      float: left;
-      width: 80px;
-      font-weight: 500;
-      color: rgba(232, 237, 255, 0.9);
-    }
-
-    dl.meta dd {
-      margin: 0 0 4px 80px;
-    }
-
-    .id-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      font-size: 13px;
-      color: var(--text-muted);
-    }
-
-    .id-item {
+    .link-row {
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      padding: 7px 0;
-      border-top: 1px solid rgba(255, 255, 255, 0.02);
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
     }
 
-    .id-item:first-child {
-      border-top: none;
+    .section-title {
+      margin-top: 60px;
+      margin-bottom: 14px;
+      font-size: 20px;
+      font-weight: 700;
+      color: #cfe0ff;
     }
 
-    .id-label {
-      display: flex;
-      flex-direction: column;
-      gap: 1px;
-    }
-
-    .id-label span:first-child {
-      color: rgba(234, 238, 255, 0.96);
-      font-size: 13px;
-      font-weight: 500;
-    }
-
-    .id-label span:last-child {
-      font-size: 12px;
-    }
-
-    .id-link {
-      font-size: 12px;
-      padding: 4px 9px;
-      border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      background: rgba(8, 13, 28, 0.9);
-      color: #d8e2ff;
-      opacity: 0.92;
-    }
-
-    .id-link:hover {
-      opacity: 1;
-      background: rgba(9, 15, 32, 1);
-    }
-
-    .areas-list {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      font-size: 13px;
-      color: var(--text-muted);
-    }
-
-    .areas-list li + li {
-      margin-top: 4px;
-    }
-
-    .footer {
-      margin-top: 22px;
-      font-size: 11px;
-      color: var(--text-muted);
-      text-align: center;
-      opacity: 0.78;
-    }
-
-    .footer a {
-      color: var(--accent);
+    a {
+      color: var(--accent2);
       text-decoration: none;
     }
 
-    .footer a:hover {
+    a:hover {
       text-decoration: underline;
     }
 
-    @media (max-width: 880px) {
-      .layout {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .page {
-        margin-top: 18px;
-      }
-
-      .header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-      }
-    }
-
-    @media (max-width: 540px) {
-      .hero-title {
-        font-size: 20px;
-      }
-
-      .hero-buttons {
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      dl.meta dt {
-        width: 78px;
-      }
-      dl.meta dd {
-        margin-left: 78px;
-      }
-    }
   </style>
 </head>
-<body>
-  <div class="page">
-    <header class="header">
-      <div class="title-block">
-        <h1>Dr. Sumeet Bajaj</h1>
-        <span>Blockchain &amp; Digital Health</span>
-      </div>
-      <div class="collab-pill">
-        <span class="dot"></span>
-        <span>Open to collaborations in Web3 x Healthcare</span>
-      </div>
-    </header>
 
-    <main class="layout">
-      <!-- LEFT COLUMN -->
-      <div>
-        <!-- HERO -->
-        <section class="card">
-          <div class="card-header">Primary Focus</div>
-          <h2 class="hero-title">
-            Blockchain-Based Personal Health Records (PHR) &amp; Web3 Healthcare
-          </h2>
-          <p class="hero-subtitle">
-            PhD in Information Technology (University of the Cumberlands). My work
-            explores blockchain-enabled Personal Health Records, patient-centred
-            design, and secure Web3 health infrastructures that move beyond
-            theoretical models into practical implementations.
+<body>
+  <div class="container">
+
+    <!-- TOP HEADER -->
+    <h1>Dr. Sumeet Bajaj <span style="color:#8cb7ff; font-size:18px; font-weight:500;">Blockchain & Digital Health</span></h1>
+    <div class="tag" style="background:#1e402e; border-color:#2d6f50; color:#8cffc3;">Open to collaborations in Web3 × Healthcare</div>
+
+    <div class="flex">
+      <!-- LEFT MAIN -->
+      <div class="left">
+
+        <div class="card" style="padding:40px;">
+          <h2>BLOCKCHAIN-BASED PERSONAL HEALTH RECORDS (PHR) & WEB3 HEALTHCARE</h2>
+          <p style="color:var(--subtext); line-height:1.6; margin-top:10px;">
+            PhD in Information Technology (University of the Cumberlands). My work focuses on blockchain-enabled Personal Health Records, patient-centered system design, and secure Web3 health infrastructures.
           </p>
 
-          <div class="tag-row">
-            <span class="tag tag-strong">Blockchain PHR</span>
+          <!-- Tags -->
+          <div style="margin-top:10px;">
+            <span class="tag">Blockchain PHRs</span>
             <span class="tag">Digital Health</span>
             <span class="tag">Web3</span>
             <span class="tag">Cybersecurity</span>
             <span class="tag">Qualitative Research</span>
           </div>
 
-          <div class="hero-buttons">
-            <a
-              class="btn btn-primary"
-              href="https://github.com/phr-vault/phr-vault"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View PHR Vault Prototype
-            </a>
-            <a
-              class="btn btn-ghost"
-              href="https://www.researchgate.net/publication/398154413_Patient_Perceptions_of_Blockchain-Based_Personal_Health_Records_Qualitative_Insights_on_Security_Trust_and_Data_Control"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Read Research Preprint
-            </a>
+          <!-- Buttons -->
+          <div style="margin-top:18px;">
+            <a class="btn" href="https://github.com/phr-vault/phr-vault" target="_blank">View PHR Vault Prototype</a>
+            <a class="btn" href="https://www.researchgate.net/publication/398154413_Patient_Perceptions_of_Blockchain-Based_Personal_Health_Records_Qualitative_Insights_on_Security_Trust_and_Data_Control" target="_blank">Read Research Preprint</a>
           </div>
 
-          <p class="hero-footnote">
-            Current focus: translating qualitative findings on patient trust,
-            usability, and data control into practical, patient-owned digital
-            health solutions.
+          <p style="color:#7ea2d6; font-size:13px; margin-top:12px;">
+            Current focus: turning qualitative findings on patient trust, usability, and control into practical, real-world decentralized health solutions.
           </p>
-        </section>
+        </div>
 
-        <!-- RESEARCH -->
-        <h3 class="section-title">Research</h3>
-        <section class="card-soft">
-          <h4 class="research-title">
-            Patient Perceptions of Blockchain-Based Personal Health Records
-          </h4>
-          <div class="research-meta">
-            Qualitative insights into security, trust, efficiency, and data control
-            when blockchain is introduced into Personal Health Record systems.
-            <br />
-            <span>
-              Preprint · December 2025 · University of the Cumberlands
-            </span>
-          </div>
-          <p class="research-body">
-            This blockchain-based study uses interpretative phenomenological
-            analysis (IPA) to understand how patients perceive the value of
-            blockchain-enabled PHRs. Themes include perceived security and
-            transparency, usability and digital literacy barriers, and the
-            importance of patient-centred control over data access and sharing.
+
+        <!-- RESEARCH SECTION -->
+        <div class="section-title">RESEARCH</div>
+
+        <div class="card">
+          <h3 style="margin-bottom:10px;">Patient Perceptions of Blockchain-Based Personal Health Records</h3>
+
+          <p style="color:var(--subtext); line-height:1.6;">
+            Qualitative insights into how patients think about security, trust, efficiency, and data control when blockchain is introduced into Personal Health Record systems.
           </p>
-          <div class="tag-row">
+
+          <p style="color:#9bb7e0; font-size:13px;">Preprint • December 2025 • University of the Cumberlands</p>
+
+          <div style="margin-top:12px;">
             <span class="tag">Blockchain PHR</span>
-            <span class="tag">Security &amp; Trust</span>
+            <span class="tag">Security & Trust</span>
             <span class="tag">Patient-Centered Care</span>
             <span class="tag">Interpretative Phenomenological Analysis</span>
           </div>
-          <div class="research-links">
-            <a
-              class="link-soft"
-              href="https://www.researchgate.net/publication/398154413_Patient_Perceptions_of_Blockchain-Based_Personal_Health_Records_Qualitative_Insights_on_Security_Trust_and_Data_Control"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              → ResearchGate preprint
-            </a>
-            <a
-              class="link-soft"
-              href="https://scholar.google.com/citations?user=rT7NQgMAAAAJ"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              → Google Scholar entry
-            </a>
+
+          <div style="margin-top:14px;">
+            → <a href="https://www.researchgate.net/publication/398154413_Patient_Perceptions_of_Blockchain-Based_Personal_Health_Records_Qualitative_Insights_on_Security_Trust_and_Data_Control" target="_blank">ResearchGate preprint</a><br>
+            → <a href="https://scholar.google.com/citations?user=rT7NqgMAAAAJ" target="_blank">Google Scholar profile</a>
           </div>
-        </section>
-
-        <!-- PROJECTS (light placeholder for now) -->
-        <h3 class="section-title">Projects</h3>
-        <section class="card-soft">
-          <h4 class="research-title">PHR Vault – 2026 Prototype</h4>
-          <div class="research-meta">
-            A decentralized PHR system demonstrating patient-controlled data
-            access using Web3 technologies (Solidity, IPFS, smart contracts).
-          </div>
-          <p class="research-body">
-            The PHR Vault prototype is designed as a technical companion to the
-            research, translating theoretical insights on trust, security, and
-            patient agency into an experimental implementation. Future work
-            includes UX refinement, multi-chain support, and integration with
-            existing healthcare workflows.
-          </p>
-          <div class="research-links">
-            <a
-              class="link-soft"
-              href="https://github.com/phr-vault/phr-vault"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              → View repository on GitHub
-            </a>
-          </div>
-        </section>
-      </div>
-
-      <!-- RIGHT COLUMN / SIDEBAR -->
-      <aside>
-        <!-- QUICK PROFILE -->
-        <div class="sidebar-block card-soft">
-          <div class="sidebar-title">Quick Profile</div>
-          <dl class="meta">
-            <dt>Name</dt>
-            <dd>Dr. Sumeet Bajaj</dd>
-
-            <dt>Degree</dt>
-            <dd>PhD, Information Technology</dd>
-
-            <dt>Focus</dt>
-            <dd>Blockchain-based PHRs &amp; Web3 healthcare</dd>
-
-            <dt>Location</dt>
-            <dd>USA / India (global collaboration)</dd>
-          </dl>
         </div>
 
-        <!-- OFFICIAL IDS -->
-        <div class="sidebar-block card-soft">
-          <div class="sidebar-title">Official IDs &amp; Profiles</div>
-          <ul class="id-list">
-            <li class="id-item">
-              <div class="id-label">
-                <span>ORCID</span>
-                <span>0009-0003-4129-0614</span>
-              </div>
-              <a
-                class="id-link"
-                href="https://orcid.org/0009-0003-4129-0614"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Open
-              </a>
-            </li>
-            <li class="id-item">
-              <div class="id-label">
-                <span>ResearchGate</span>
-                <span>Publications &amp; full-text</span>
-              </div>
-              <a
-                class="id-link"
-                href="https://www.researchgate.net/publication/398154413_Patient_Perceptions_of_Blockchain-Based_Personal_Health_Records_Qualitative_Insights_on_Security_Trust_and_Data_Control"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Open
-              </a>
-            </li>
-            <li class="id-item">
-              <div class="id-label">
-                <span>Google Scholar</span>
-                <span>Citations &amp; metrics</span>
-              </div>
-              <a
-                class="id-link"
-                href="https://scholar.google.com/citations?user=rT7NQgMAAAAJ"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Open
-              </a>
-            </li>
-            <li class="id-item">
-              <div class="id-label">
-                <span>LinkedIn</span>
-                <span>Professional profile</span>
-              </div>
-              <a
-                class="id-link"
-                href="https://linkedin.com/in/sbajaj5"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Open
-              </a>
-            </li>
-          </ul>
+
+      </div>
+
+      <!-- RIGHT SIDEBAR -->
+      <div class="right">
+
+        <!-- QUICK PROFILE -->
+        <div class="card">
+          <h3 style="margin-bottom:12px;">Quick Profile</h3>
+
+          <p><b>Name:</b> Dr. Sumeet Bajaj</p>
+          <p><b>Degree:</b> PhD, Information Technology</p>
+          <p><b>Focus:</b> Blockchain-based PHRs & Web3 Healthcare</p>
+          <p><b>Location:</b> USA / India (global collaboration)</p>
+        </div>
+
+        <!-- OFFICIAL LINKS -->
+        <div class="card">
+          <h3 style="margin-bottom:12px;">Official IDs & Profiles</h3>
+
+          <div class="link-row">
+            <span>ORCID</span>
+            <a href="https://orcid.org/0009-0003-4129-0614" target="_blank">Open</a>
+          </div>
+
+          <div class="link-row">
+            <span>ResearchGate</span>
+            <a href="https://www.researchgate.net/publication/398154413_Patient_Perceptions_of_Blockchain-Based_Personal_Health_Records_Qualitative_Insights_on_Security_Trust_and_Data_Control" target="_blank">Open</a>
+          </div>
+
+          <div class="link-row">
+            <span>Google Scholar</span>
+            <a href="https://scholar.google.com/citations?user=rT7NqgMAAAAJ" target="_blank">Open</a>
+          </div>
+
+          <div class="link-row">
+            <span>LinkedIn</span>
+            <a href="https://www.linkedin.com/in/sumeet-bajaj/" target="_blank">Open</a>
+          </div>
         </div>
 
         <!-- AREAS OF INTEREST -->
-        <div class="sidebar-block card-soft">
-          <div class="sidebar-title">Areas of Interest</div>
-          <ul class="areas-list">
-            <li>Blockchain for healthcare &amp; PHRs</li>
-            <li>Patient-centric system design</li>
-            <li>Web3 data governance &amp; access control</li>
-            <li>Security, privacy, and trust models</li>
-            <li>Real-world implementations of PHR Vault</li>
-          </ul>
+        <div class="card">
+          <h3 style="margin-bottom:12px;">Areas of Interest</h3>
+
+          <p>Blockchain for healthcare & PHRs</p>
+          <p>Patient-centric system design</p>
+          <p>Web3 data governance & access control</p>
+          <p>Security, privacy, and trust models</p>
+          <p>Real-world implementations of PHR Vault</p>
         </div>
 
-        <!-- CONTACT -->
-        <div class="sidebar-block card-soft">
-          <div class="sidebar-title">Collaboration &amp; Contact</div>
-          <p style="margin: 0; font-size: 13px; color: var(--text-muted);">
-            Open to collaborations with healthcare organizations, Web3 builders,
-            and research groups exploring secure, patient-owned health data.
-            <br /><br />
-            Best initial contact: connect on
-            <a
-              href="https://linkedin.com/in/sbajaj5"
-              target="_blank"
-              rel="noopener noreferrer"
-              style="color: #c7d6ff; text-decoration: underline;"
-              >LinkedIn</a
-            >.
-          </p>
-        </div>
-      </aside>
-    </main>
+      </div>
+    </div>
 
-    <footer class="footer">
-      © 2025 Dr. Sumeet Bajaj · Portfolio generated manually and hosted on
-      GitHub Pages (
-      <a
-        href="https://github.com/phr-vault/phr-vault.github.io"
-        target="_blank"
-        rel="noopener noreferrer"
-        >view source</a
-      >).
-    </footer>
   </div>
 </body>
 </html>
