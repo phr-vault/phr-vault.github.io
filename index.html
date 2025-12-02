@@ -2,126 +2,110 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dr. Sumeet Bajaj – Blockchain & Digital Health</title>
+  <title>Dr. Sumeet Bajaj – Blockchain, Web3 & Digital Health</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Dr. Sumeet Bajaj – Software Engineer & Blockchain researcher focused on Web3, Personal Health Records (PHR), and decentralized digital health."
+  />
 
-  <!-- Optional: nicer font -->
+  <!-- Font -->
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
     rel="stylesheet"
   />
 
   <style>
-    /* -------------------------------------------------
-       THEME VARIABLES (Dark / Light switch)
-    ------------------------------------------------- */
     :root {
-      /* dark default */
-      --bg-main: radial-gradient(circle at 30% -10%, #1b2748 0%, #050814 45%, #02030a 100%);
-      --text: #d7e2ff;
-      --subtext: #9db0d8;
-      --card-bg: rgba(255, 255, 255, 0.04);
-      --card-border: rgba(255, 255, 255, 0.08);
-      --accent: #6aa9ff;
-      --accent2: #8cc0ff;
-      --accent-soft: rgba(106, 169, 255, 0.18);
-      --tag-bg: rgba(255, 255, 255, 0.06);
-      --tag-border: rgba(255, 255, 255, 0.14);
-      --shadow-soft: 0 0 25px rgba(0, 0, 0, 0.42);
+      --bg-gradient: radial-gradient(circle at top left, #1e293b, #020617 55%, #000000 100%);
+      --card-bg: rgba(15, 23, 42, 0.88);
+      --card-border: rgba(148, 163, 184, 0.25);
+      --accent: #38bdf8;
+      --accent-soft: rgba(56, 189, 248, 0.18);
+      --accent-strong: #0ea5e9;
+      --tag-bg: rgba(15, 23, 42, 0.9);
+      --tag-border: rgba(148, 163, 184, 0.4);
+      --text-main: #e5e7eb;
+      --text-muted: #9ca3af;
+      --text-soft: #6b7280;
+      --text-heading: #f9fafb;
+      --shadow-soft: 0 24px 80px rgba(15, 23, 42, 0.9);
+      --radius-xl: 22px;
+      --radius-lg: 18px;
+      --radius-pill: 999px;
+      --blur-strong: blur(26px);
     }
 
-    body[data-theme="light"] {
-      --bg-main: radial-gradient(circle at 10% -20%, #e7f0ff 0%, #f7f9ff 45%, #e4ebff 100%);
-      --text: #121624;
-      --subtext: #4f5f80;
-      --card-bg: #ffffff;
-      --card-border: rgba(17, 24, 39, 0.06);
-      --accent: #2563eb;
-      --accent2: #1d4ed8;
-      --accent-soft: rgba(37, 99, 235, 0.08);
-      --tag-bg: rgba(15, 23, 42, 0.03);
-      --tag-border: rgba(15, 23, 42, 0.1);
-      --shadow-soft: 0 18px 30px rgba(15, 23, 42, 0.1);
-    }
-
-    /* -------------------------------------------------
-       GLOBAL
-    ------------------------------------------------- */
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      height: 100%;
     }
 
     body {
-      margin: 0;
-      min-height: 100vh;
       font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
         sans-serif;
-      background: var(--bg-main);
-      color: var(--text);
+      background: var(--bg-gradient);
+      color: var(--text-main);
       -webkit-font-smoothing: antialiased;
-      transition: background 0.6s ease, color 0.3s ease;
+      padding: 24px 16px 40px;
     }
 
-    .container {
-      width: 84%;
-      max-width: 1300px;
-      margin: auto;
-      padding-top: 32px;
-      padding-bottom: 60px;
+    .page-shell {
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
-    h1,
-    h2,
-    h3 {
-      margin: 0;
-      font-weight: 700;
-      letter-spacing: 0.5px;
+    /* Subtle vignette + glow */
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -1;
+    }
+    body::before {
+      background:
+        radial-gradient(circle at top left, rgba(56, 189, 248, 0.12), transparent 60%),
+        radial-gradient(circle at bottom right, rgba(59, 130, 246, 0.14), transparent 55%);
+      filter: blur(4px);
+    }
+    body::after {
+      background: radial-gradient(circle at center, rgba(15, 23, 42, 0.95), transparent 70%);
+      mix-blend-mode: multiply;
     }
 
-    h1 {
-      font-size: 30px;
+    /* Layout */
+    .layout-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 2.1fr) minmax(0, 1.1fr);
+      gap: 24px;
     }
 
-    h2 {
-      font-size: 22px;
-      margin-bottom: 14px;
-      color: #cfe0ff;
+    @media (max-width: 900px) {
+      .layout-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      body {
+        padding: 16px 12px 32px;
+      }
     }
 
-    body[data-theme="light"] h2 {
-      color: #1f2937;
-    }
-
-    h3 {
-      font-size: 17px;
-    }
-
-    p {
-      margin: 0;
-    }
-
-    a {
-      color: var(--accent2);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    /* -------------------------------------------------
-       CARDS & SHARED UI
-    ------------------------------------------------- */
+    /* Generic card */
     .card {
       background: var(--card-bg);
+      border-radius: var(--radius-xl);
       border: 1px solid var(--card-border);
-      border-radius: 18px;
-      padding: 24px 26px;
-      margin-bottom: 22px;
       box-shadow: var(--shadow-soft);
-      backdrop-filter: blur(12px);
-      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease,
-        background 0.18s ease;
+      padding: 20px 22px;
+      backdrop-filter: var(--blur-strong);
+      -webkit-backdrop-filter: var(--blur-strong);
       position: relative;
       overflow: hidden;
     }
@@ -129,583 +113,787 @@
     .card::before {
       content: "";
       position: absolute;
-      inset: -40%;
-      background: radial-gradient(
-        circle at 0% 0%,
-        var(--accent-soft),
-        transparent 55%
-      );
-      opacity: 0;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(56, 189, 248, 0.075), transparent 60%);
+      opacity: 0.8;
       pointer-events: none;
-      transition: opacity 0.25s ease;
     }
 
-    .card:hover {
-      transform: translateY(-3px);
-      border-color: rgba(148, 191, 255, 0.6);
-      box-shadow: 0 0 35px rgba(60, 120, 255, 0.25);
+    .card-inner {
+      position: relative;
+      z-index: 1;
     }
 
-    .card:hover::before {
-      opacity: 1;
+    /* Header / hero */
+    .header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .name-block {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .name-block h1 {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      color: var(--text-heading);
+    }
+
+    .subtitle {
+      font-size: 14px;
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    .availability-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 5px 11px 5px 6px;
+      border-radius: var(--radius-pill);
+      background: rgba(22, 163, 74, 0.14);
+      border: 1px solid rgba(34, 197, 94, 0.35);
+      color: #bbf7d0;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .availability-pill span.dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 12px rgba(22, 163, 74, 0.8);
+    }
+
+    @media (max-width: 600px) {
+      .header-row {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .name-block h1 {
+        font-size: 24px;
+      }
+    }
+
+    /* Hero main title */
+    .hero-title {
+      font-size: 24px;
+      line-height: 1.25;
+      font-weight: 700;
+      margin-bottom: 14px;
+      color: var(--text-heading);
+    }
+
+    .hero-highlight {
+      color: var(--accent-strong);
+    }
+
+    .hero-text {
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--text-muted);
+      max-width: 640px;
+    }
+
+    /* Tags / chips */
+    .tags-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 18px 0 16px;
     }
 
     .tag {
-      display: inline-block;
-      padding: 5px 12px;
-      font-size: 12px;
-      margin-right: 6px;
-      margin-bottom: 6px;
+      font-size: 11px;
+      padding: 5px 10px;
       border-radius: 999px;
       background: var(--tag-bg);
       border: 1px solid var(--tag-border);
-      color: var(--subtext);
-      transition: background 0.15s ease, transform 0.15s ease, border-color 0.15s ease;
-      cursor: default;
+      color: var(--text-soft);
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
     }
 
-    .tag:hover {
-      transform: translateY(-1px);
-      background: rgba(122, 186, 255, 0.1);
-      border-color: rgba(148, 191, 255, 0.6);
+    .tag.accent {
+      border-color: rgba(56, 189, 248, 0.8);
+      color: var(--accent-strong);
+      background: var(--accent-soft);
+    }
+
+    /* Buttons */
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 4px;
+      margin-bottom: 12px;
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 9px 18px;
-      background: var(--accent);
-      color: #fff;
+      gap: 8px;
+      padding: 8px 14px;
       border-radius: 999px;
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 500;
       text-decoration: none;
-      margin-right: 10px;
-      border: none;
       cursor: pointer;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-      transition: transform 0.16s ease, box-shadow 0.16s ease, background 0.16s ease;
+      border: 1px solid transparent;
+      transition: all 0.15s ease-out;
       white-space: nowrap;
     }
 
-    .btn:hover {
-      background: var(--accent2);
+    .btn-primary {
+      background: linear-gradient(135deg, #38bdf8, #6366f1);
+      color: #0b1120;
+      box-shadow: 0 12px 35px rgba(37, 99, 235, 0.5);
+    }
+
+    .btn-primary:hover {
       transform: translateY(-1px);
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.32);
-      text-decoration: none;
+      box-shadow: 0 16px 40px rgba(37, 99, 235, 0.7);
     }
 
-    .btn-secondary {
-      background: transparent;
-      color: var(--accent2);
-      border: 1px solid rgba(148, 191, 255, 0.6);
-      box-shadow: none;
+    .btn-ghost {
+      background: rgba(15, 23, 42, 0.9);
+      border-color: rgba(148, 163, 184, 0.5);
+      color: var(--text-muted);
     }
 
-    .btn-secondary:hover {
-      background: rgba(148, 191, 255, 0.1);
-      box-shadow: none;
+    .btn-ghost:hover {
+      border-color: var(--accent);
+      color: var(--accent-strong);
+      background: rgba(15, 23, 42, 0.95);
     }
 
-    .flex {
-      display: flex;
-      gap: 30px;
-      margin-top: 30px;
+    .btn span.icon {
+      font-size: 15px;
+      line-height: 1;
     }
 
-    .left {
-      flex: 2;
-    }
-
-    .right {
-      flex: 1;
-    }
-
-    .link-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-      font-size: 14px;
-    }
-
-    body[data-theme="light"] .link-row {
-      border-bottom: 1px solid rgba(15, 23, 42, 0.06);
-    }
-
+    /* Section title */
     .section-title {
-      margin-top: 60px;
-      margin-bottom: 14px;
-      font-size: 19px;
-      font-weight: 700;
-      color: #cfe0ff;
-      letter-spacing: 0.06em;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-soft);
+      margin-bottom: 10px;
     }
 
-    body[data-theme="light"] .section-title {
-      color: #1e293b;
+    /* Research / projects grid */
+    .two-col-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.2fr);
+      gap: 18px;
+      margin-top: 18px;
     }
 
-    /* -------------------------------------------------
-       HEADER + AVATAR + THEME TOGGLE
-    ------------------------------------------------- */
-    .top-bar {
-      display: flex;
-      justify-content: space-between;
+    @media (max-width: 900px) {
+      .two-col-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .pill-label {
+      display: inline-flex;
       align-items: center;
-      gap: 16px;
+      gap: 8px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      color: var(--text-soft);
+      margin-bottom: 6px;
     }
 
-    .top-left {
+    .pill-label span.dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    .card-subtitle {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+
+    .meta-row {
       display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+      font-size: 11px;
+      color: var(--text-soft);
+    }
+
+    .meta-item {
+      display: inline-flex;
       align-items: center;
-      gap: 16px;
+      gap: 6px;
+    }
+
+    .meta-dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 999px;
+      background: rgba(148, 163, 184, 0.7);
+    }
+
+    .card-links {
+      margin-top: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 12px;
+    }
+
+    .card-link {
+      color: var(--accent-strong);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .card-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Sidebar */
+    .sidebar-card + .sidebar-card {
+      margin-top: 16px;
+    }
+
+    .sidebar-heading {
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: var(--text-heading);
+    }
+
+    .profile-grid {
+      display: grid;
+      grid-template-columns: 72px minmax(0, 1fr);
+      gap: 14px;
+      align-items: center;
+      margin-bottom: 10px;
     }
 
     .avatar {
-      width: 52px;
-      height: 52px;
-      border-radius: 50%;
+      width: 72px;
+      height: 72px;
+      border-radius: 999px;
       overflow: hidden;
-      border: 2px solid rgba(148, 191, 255, 0.9);
-      box-shadow: 0 0 18px rgba(106, 169, 255, 0.6);
-      flex-shrink: 0;
+      border: 2px solid rgba(148, 163, 184, 0.4);
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.8);
+      background: #020617;
     }
 
     .avatar img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      display: block;
     }
 
-    .avatar-placeholder {
-      width: 100%;
-      height: 100%;
-      background: radial-gradient(circle at 30% 20%, #9ac6ff 0%, #4b5bb4 40%, #12142a 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      color: #e5edff;
-      font-size: 20px;
-    }
-
-    .subtitle {
-      font-size: 15px;
-      color: #8fb3ff;
-      margin-top: 4px;
-    }
-
-    body[data-theme="light"] .subtitle {
-      color: #1d4ed8;
-    }
-
-    .pill-status {
-      display: inline-flex;
-      align-items: center;
-      padding: 4px 10px;
-      border-radius: 999px;
+    .profile-meta-line {
       font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .profile-meta-label {
+      color: var(--text-soft);
+    }
+
+    .id-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
       margin-top: 6px;
-      background: rgba(34, 197, 94, 0.12);
-      color: #6ee7b7;
-      border: 1px solid rgba(34, 197, 94, 0.5);
     }
 
-    body[data-theme="light"] .pill-status {
-      background: rgba(22, 163, 74, 0.06);
-      color: #16a34a;
-      border-color: rgba(22, 163, 74, 0.4);
-    }
-
-    .pill-status-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: #22c55e;
-      margin-right: 6px;
-    }
-
-    .theme-toggle {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 6px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 191, 255, 0.5);
-      background: rgba(15, 23, 42, 0.4);
-      color: var(--subtext);
-      font-size: 12px;
-      cursor: pointer;
-      backdrop-filter: blur(10px);
-      transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
-    }
-
-    body[data-theme="light"] .theme-toggle {
-      background: rgba(255, 255, 255, 0.85);
-      border-color: rgba(148, 163, 184, 0.7);
-    }
-
-    .theme-toggle:hover {
-      border-color: rgba(148, 191, 255, 0.9);
-      transform: translateY(-1px);
-    }
-
-    .theme-icon {
-      font-size: 15px;
-    }
-
-    /* -------------------------------------------------
-       PROJECTS GRID
-    ------------------------------------------------- */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-      gap: 20px;
-    }
-
-    @media (max-width: 960px) {
-      .flex {
-        flex-direction: column;
-      }
-      .projects-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-
-    @media (max-width: 720px) {
-      .container {
-        width: 92%;
-      }
-      .top-bar {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
-
-    /* -------------------------------------------------
-       FOOTER
-    ------------------------------------------------- */
-    footer {
-      margin-top: 50px;
-      padding-top: 18px;
-      border-top: 1px solid rgba(148, 163, 184, 0.3);
-      font-size: 12px;
-      color: var(--subtext);
+    .id-row {
       display: flex;
+      align-items: center;
       justify-content: space-between;
-      gap: 12px;
-      flex-wrap: wrap;
+      gap: 8px;
+      padding: 7px 9px;
+      border-radius: var(--radius-lg);
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(51, 65, 85, 0.9);
+      font-size: 12px;
+      color: var(--text-muted);
     }
 
-    .footer-links a {
-      margin-right: 14px;
+    .id-label {
+      font-weight: 500;
+      color: var(--text-main);
+    }
+
+    .id-secondary {
+      font-size: 11px;
+      color: var(--text-soft);
+    }
+
+    .id-row a {
+      font-size: 11px;
+      text-decoration: none;
+      color: var(--accent-strong);
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.98);
+      border: 1px solid rgba(56, 189, 248, 0.4);
+    }
+
+    .id-row a:hover {
+      background: rgba(15, 23, 42, 1);
+    }
+
+    /* Experience / skills */
+    .experience-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
       font-size: 12px;
+    }
+
+    .exp-item {
+      padding: 8px 9px;
+      border-radius: 14px;
+      border: 1px solid rgba(30, 64, 175, 0.7);
+      background: rgba(15, 23, 42, 0.96);
+    }
+
+    .exp-role {
+      font-weight: 500;
+      color: var(--text-main);
+      margin-bottom: 2px;
+    }
+
+    .exp-org {
+      font-size: 12px;
+      color: var(--text-soft);
+    }
+
+    .exp-meta {
+      font-size: 11px;
+      color: var(--text-soft);
+      margin-top: 3px;
+    }
+
+    .exp-bullets {
+      margin-top: 4px;
+      padding-left: 14px;
+      color: var(--text-muted);
+    }
+
+    .exp-bullets li {
+      margin-bottom: 2px;
+    }
+
+    .skill-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .skill-chip {
+      font-size: 11px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.96);
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      color: var(--text-soft);
+    }
+
+    .footer-note {
+      margin-top: 16px;
+      font-size: 11px;
+      color: var(--text-soft);
+      text-align: right;
+    }
+
+    .footer-note a {
+      color: var(--accent-strong);
+      text-decoration: none;
+    }
+
+    .footer-note a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
-
 <body>
-  <div class="container">
-    <!-- TOP BAR: Avatar + name + theme toggle -->
-    <div class="top-bar">
-      <div class="top-left">
-        <div class="avatar">
-          <!-- Replace placeholder with your actual headshot URL if you want -->
-          <!-- <img src="YOUR_PHOTO_URL_HERE" alt="Dr. Sumeet Bajaj" /> -->
-          <div class="avatar-placeholder">SB</div>
-        </div>
+  <div class="page-shell">
+    <div class="layout-grid">
+      <!-- LEFT COLUMN -->
+      <main>
+        <!-- HERO CARD -->
+        <section class="card">
+          <div class="card-inner">
+            <header class="header-row">
+              <div class="name-block">
+                <h1>Dr. Sumeet Bajaj</h1>
+                <div class="subtitle">Blockchain &amp; Digital Health • Web3 &amp; Full-Stack Engineering</div>
+              </div>
+              <div class="availability-pill">
+                <span class="dot"></span>
+                Open to collaborations in Web3 x Healthcare
+              </div>
+            </header>
 
-        <div>
-          <h1>Dr. Sumeet Bajaj</h1>
-          <div class="subtitle">Blockchain & Digital Health</div>
-          <div class="pill-status">
-            <span class="pill-status-dot"></span>
-            Open to collaborations in Web3 × Healthcare
-          </div>
-        </div>
-      </div>
+            <h2 class="hero-title">
+              <span class="hero-highlight">Blockchain-Based Personal Health Records (PHR)</span>
+              &amp; Web3 Healthcare
+            </h2>
 
-      <div style="display:flex;align-items:center;gap:10px;">
-        <a
-          class="btn-secondary btn"
-          href="#"
-          target="_blank"
-          title="Replace # with link to your CV PDF"
-        >
-          📄 Download CV
-        </a>
-
-        <button type="button" id="themeToggle" class="theme-toggle">
-          <span class="theme-icon" id="themeIcon">🌙</span>
-          <span id="themeLabel">Dark mode</span>
-        </button>
-      </div>
-    </div>
-
-    <!-- MAIN LAYOUT -->
-    <div class="flex">
-      <!-- LEFT SIDE -->
-      <div class="left">
-        <!-- HERO / MAIN SUMMARY -->
-        <div class="card" style="padding:36px 32px;">
-          <h2>BLOCKCHAIN-BASED PERSONAL HEALTH RECORDS (PHR) & WEB3 HEALTHCARE</h2>
-          <p style="color:var(--subtext); line-height:1.7; margin-top:10px;">
-            PhD in Information Technology (University of the Cumberlands). My work
-            focuses on blockchain-enabled Personal Health Records, patient-centered
-            system design, and secure Web3 health infrastructures.
-          </p>
-
-          <div style="margin-top:10px;">
-            <span class="tag">Blockchain PHRs</span>
-            <span class="tag">Digital Health</span>
-            <span class="tag">Web3</span>
-            <span class="tag">Cybersecurity</span>
-            <span class="tag">Qualitative Research</span>
-          </div>
-
-          <div style="margin-top:18px; display:flex; flex-wrap:wrap; gap:10px;">
-            <a
-              class="btn"
-              href="https://github.com/phr-vault/phr-vault"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View PHR Vault Prototype
-            </a>
-            <a
-              class="btn btn-secondary"
-              href="https://www.researchgate.net/publication/398154413_Patient_Perceptions_of_Blockchain-Based_Personal_Health_Records_Qualitative_Insights_on_Security_Trust_and_Data_Control"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Read Research Preprint
-            </a>
-          </div>
-
-          <p style="color:#7ea2d6; font-size:13px; margin-top:12px;">
-            Current focus: turning qualitative findings on patient trust, usability, and
-            control into practical, real-world decentralized health solutions.
-          </p>
-        </div>
-
-        <!-- RESEARCH SECTION -->
-        <div class="section-title">RESEARCH</div>
-
-        <div class="card">
-          <h3 style="margin-bottom:8px;">
-            Patient Perceptions of Blockchain-Based Personal Health Records
-          </h3>
-
-          <p style="color:var(--subtext); line-height:1.7;">
-            Qualitative insights into how patients think about security, trust, efficiency,
-            and data control when blockchain is introduced into Personal Health Record
-            systems.
-          </p>
-
-          <p style="color:#9bb7e0; font-size:13px; margin-top:8px;">
-            Preprint • December 2025 • University of the Cumberlands
-          </p>
-
-          <div style="margin-top:12px;">
-            <span class="tag">Blockchain PHR</span>
-            <span class="tag">Security & Trust</span>
-            <span class="tag">Patient-Centered Care</span>
-            <span class="tag">Interpretative Phenomenological Analysis</span>
-          </div>
-
-          <div style="margin-top:14px; font-size:14px;">
-            → <a
-              href="https://www.researchgate.net/publication/398154413_Patient_Perceptions_of_Blockchain-Based_Personal_Health_Records_Qualitative_Insights_on_Security_Trust_and_Data_Control"
-              target="_blank"
-              rel="noopener noreferrer"
-            >ResearchGate preprint</a
-            ><br />
-            → <a
-              href="https://scholar.google.com/citations?user=rT7NqgMAAAAJ"
-              target="_blank"
-              rel="noopener noreferrer"
-            >Google Scholar profile</a>
-          </div>
-        </div>
-
-        <!-- PROJECTS SECTION -->
-        <div class="section-title">PROJECTS</div>
-
-        <div class="projects-grid">
-          <!-- Project 1: PHR Vault -->
-          <div class="card">
-            <h3 style="margin-bottom:6px;">PHR Vault – Web3 Personal Health Records</h3>
-            <p style="color:var(--subtext); line-height:1.6;">
-              A decentralized PHR prototype where patients control access to their health
-              data using smart contracts and IPFS. Designed to demonstrate practical,
-              patient-centric blockchain in healthcare.
+            <p class="hero-text">
+              Software Engineer with 7+ years of experience across Citi, PwC, and Siemens, working on
+              large-scale front-end and cloud applications. My PhD research and current work focus on
+              blockchain-enabled Personal Health Records, patient-centric system design, and secure Web3
+              infrastructure for digital health.
             </p>
 
-            <div style="margin-top:12px;">
-              <span class="tag">Solidity</span>
-              <span class="tag">React / Next.js</span>
-              <span class="tag">IPFS</span>
-              <span class="tag">MetaMask</span>
-              <span class="tag">Patient Data Access Control</span>
+            <div class="tags-row">
+              <span class="tag accent">Blockchain PHRs</span>
+              <span class="tag">Digital Health</span>
+              <span class="tag">Web3 &amp; DeFi</span>
+              <span class="tag">Cybersecurity</span>
+              <span class="tag">Qualitative Research</span>
             </div>
 
-            <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
+            <div class="button-row">
               <a
-                class="btn"
+                class="btn btn-primary"
                 href="https://github.com/phr-vault/phr-vault"
                 target="_blank"
                 rel="noopener noreferrer"
-              >View GitHub Repo</a>
-              <a class="btn btn-secondary" href="#"
-                >Live demo (coming soon)</a
               >
+                <span class="icon">💾</span>
+                View PHR Vault Prototype
+              </a>
+              <a
+                class="btn btn-ghost"
+                href="https://www.researchgate.net/publication/398154413_Patient_Perceptions_of_Blockchain-Based_Personal_Health_Records_Qualitative_Insights_on_Security_Trust_and_Data_Control"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span class="icon">📄</span>
+                Read Research Preprint
+              </a>
+              <a
+                class="btn btn-ghost"
+                href="SumeetResume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span class="icon">📎</span>
+                Download Resume
+              </a>
+            </div>
+
+            <!-- Research + Projects -->
+            <div class="two-col-grid">
+              <!-- Research card -->
+              <section>
+                <div class="section-title">Research</div>
+                <div class="card" style="padding: 16px 18px;">
+                  <div class="card-inner">
+                    <div class="pill-label">
+                      <span class="dot"></span>
+                      Patient-Centered Blockchain PHRs
+                    </div>
+                    <h3 style="font-size: 14px; margin-top: 4px; color: var(--text-heading);">
+                      Patient Perceptions of Blockchain-Based Personal Health Records
+                    </h3>
+                    <p class="card-subtitle">
+                      Qualitative insights into how patients think about security, trust, efficiency,
+                      and data control when blockchain is introduced into Personal Health Record systems.
+                    </p>
+                    <div class="meta-row">
+                      <div class="meta-item">Preprint · December 2025</div>
+                      <div class="meta-item">
+                        <span class="meta-dot"></span>
+                        University of the Cumberlands
+                      </div>
+                    </div>
+                    <div class="card-links">
+                      <a
+                        class="card-link"
+                        href="https://www.researchgate.net/publication/398154413_Patient_Perceptions_of_Blockchain-Based_Personal_Health_Records_Qualitative_Insights_on_Security_Trust_and_Data_Control"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        → ResearchGate preprint
+                      </a>
+                      <a
+                        class="card-link"
+                        href="https://scholar.google.com/citations?user=rT7NqgMAAAAJ"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        → Google Scholar entry
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <!-- Areas of interest / projects -->
+              <section>
+                <div class="section-title">Projects &amp; Areas of Interest</div>
+                <div class="card" style="padding: 16px 18px;">
+                  <div class="card-inner">
+                    <ul style="list-style: none; font-size: 13px; color: var(--text-muted); display: flex; flex-direction: column; gap: 6px;">
+                      <li>• Blockchain for healthcare &amp; Personal Health Records (PHRs)</li>
+                      <li>• Patient-centric system design &amp; digital health UX</li>
+                      <li>• Web3 data governance, access control, and Zero Trust security</li>
+                      <li>• RWA tokenization prototypes &amp; decentralized identity</li>
+                      <li>• Real-world implementations of PHR Vault and Web3 health tooling</li>
+                    </ul>
+                    <div class="card-links" style="margin-top: 10px;">
+                      <a
+                        class="card-link"
+                        href="https://github.com/phr-vault"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        → GitHub (projects &amp; code)
+                      </a>
+                      <a
+                        class="card-link"
+                        href="https://www.linkedin.com/in/sbajaj5"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        → LinkedIn profile
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </section>
             </div>
           </div>
+        </section>
 
-          <!-- Project 2: Future / placeholder -->
-          <div class="card">
-            <h3 style="margin-bottom:6px;">Upcoming: PHR Analytics & Governance Layer</h3>
-            <p style="color:var(--subtext); line-height:1.6;">
-              Conceptual design for a governance and analytics layer on top of
-              blockchain-based PHRs, focusing on consented data sharing for research while
-              preserving privacy, transparency, and patient control.
-            </p>
+        <!-- EXPERIENCE & SKILLS CARD -->
+        <section class="card" style="margin-top: 18px;">
+          <div class="card-inner">
+            <div class="section-title">Experience &amp; Technical Focus</div>
 
-            <div style="margin-top:12px;">
-              <span class="tag">Data Governance</span>
-              <span class="tag">Consent Management</span>
-              <span class="tag">De-identified Analytics</span>
+            <div class="experience-list">
+              <!-- Citi -->
+              <article class="exp-item">
+                <div class="exp-role">Senior Software Engineer</div>
+                <div class="exp-org">Citigroup · Irving, TX · 2018 – Present</div>
+                <div class="exp-meta">
+                  Angular · TypeScript · Node.js · AWS · Accessibility · Data Visualization
+                </div>
+                <ul class="exp-bullets">
+                  <li>Lead front-end work for client-facing apps such as CD-Renewal, Security Center, and QR Login.</li>
+                  <li>Build Node.js back-end services and integrate AWS (Lambda, EC2, S3, RDS) for scalable delivery.</li>
+                  <li>Collaborate with digital-assets teams to design secure UX for Web3-style asset experiences.</li>
+                  <li>Implement Cypress and Jest/Jasmine based automated testing for high-reliability releases.</li>
+                </ul>
+              </article>
+
+              <!-- PwC -->
+              <article class="exp-item">
+                <div class="exp-role">Software Engineer</div>
+                <div class="exp-org">PricewaterhouseCoopers (PwC) · Boston, MA · 2018</div>
+                <div class="exp-meta">
+                  React · Redux · Node.js · Azure · React Native
+                </div>
+                <ul class="exp-bullets">
+                  <li>Built testing-driven auditing applications (iADAPT) with React, Redux, and Node.js.</li>
+                  <li>Integrated Java Spring Boot APIs and Azure Functions to support scalable audit workflows.</li>
+                  <li>Developed React Native modules for risk assessment and reconciliation use-cases.</li>
+                </ul>
+              </article>
+
+              <!-- Siemens -->
+              <article class="exp-item">
+                <div class="exp-role">Software Engineer III</div>
+                <div class="exp-org">Siemens Healthineers · Norwood, MA · 2017 – 2018</div>
+                <div class="exp-meta">
+                  React · TypeScript · Healthcare UX
+                </div>
+                <ul class="exp-bullets">
+                  <li>Developed React/TypeScript interfaces for healthcare applications and tablet-based prototypes.</li>
+                  <li>Worked closely with product and clinical teams to align UI flows with clinical needs.</li>
+                </ul>
+              </article>
             </div>
 
-            <p style="color:#9bb7e0; font-size:13px; margin-top:12px;">
-              More details coming as prototypes are developed.
+            <div style="margin-top: 14px;">
+              <div class="sidebar-heading" style="margin-bottom: 6px;">Core Skills</div>
+              <div class="skill-chips">
+                <span class="skill-chip">Angular 16–18</span>
+                <span class="skill-chip">React / Next.js</span>
+                <span class="skill-chip">TypeScript · JavaScript</span>
+                <span class="skill-chip">Node.js / Express</span>
+                <span class="skill-chip">Solidity · Smart Contracts</span>
+                <span class="skill-chip">Ethereum · Web3</span>
+                <span class="skill-chip">IPFS · Hardhat · Truffle</span>
+                <span class="skill-chip">AWS · Azure</span>
+                <span class="skill-chip">Docker · Kubernetes</span>
+                <span class="skill-chip">Cypress · Jest</span>
+                <span class="skill-chip">SQL · MongoDB</span>
+                <span class="skill-chip">Security &amp; Zero Trust</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- RIGHT COLUMN / SIDEBAR -->
+      <aside>
+        <!-- Quick profile -->
+        <section class="card sidebar-card">
+          <div class="card-inner">
+            <div class="sidebar-heading">Quick Profile</div>
+            <div class="profile-grid">
+              <div class="avatar">
+                <!-- Put your headshot file as profile.jpg next to index.html -->
+                <img src="profile.jpg" alt="Dr. Sumeet Bajaj headshot" />
+              </div>
+              <div>
+                <div class="profile-meta-line">
+                  <span class="profile-meta-label">Name:</span> Dr. Sumeet Bajaj
+                </div>
+                <div class="profile-meta-line">
+                  <span class="profile-meta-label">Degree:</span> PhD, Information Technology
+                </div>
+                <div class="profile-meta-line">
+                  <span class="profile-meta-label">Research:</span> Blockchain-based PHR Systems, Web3 Health
+                </div>
+                <div class="profile-meta-line">
+                  <span class="profile-meta-label">Locations:</span> USA / India (global collaboration)
+                </div>
+              </div>
+            </div>
+
+            <div class="section-title" style="margin-top: 6px;">Education</div>
+            <p style="font-size: 12px; color: var(--text-muted); line-height: 1.5;">
+              PhD in Information Technology – Blockchain-Based PHR Systems (2025)<br />
+              MS in Computer Science – Governors State University<br />
+              BTech in Computer Science – ICFAI Tech University
             </p>
           </div>
-        </div>
-      </div>
+        </section>
 
-      <!-- RIGHT SIDE / SIDEBAR -->
-      <div class="right">
-        <!-- QUICK PROFILE -->
-        <div class="card">
-          <h3 style="margin-bottom:12px;">Quick Profile</h3>
+        <!-- IDs & profiles -->
+        <section class="card sidebar-card">
+          <div class="card-inner">
+            <div class="sidebar-heading">Official IDs &amp; Profiles</div>
+            <div class="id-list">
+              <div class="id-row">
+                <div>
+                  <div class="id-label">ORCID</div>
+                  <div class="id-secondary">0009-0003-4129-0614</div>
+                </div>
+                <a
+                  href="https://orcid.org/0009-0003-4129-0614"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Open
+                </a>
+              </div>
 
-          <p><b>Name:</b> Dr. Sumeet Bajaj</p>
-          <p><b>Degree:</b> PhD, Information Technology</p>
-          <p><b>Focus:</b> Blockchain-based PHRs & Web3 Healthcare</p>
-          <p><b>Location:</b> USA / India (global collaboration)</p>
-        </div>
+              <div class="id-row">
+                <div>
+                  <div class="id-label">ResearchGate</div>
+                  <div class="id-secondary">Publications &amp; full-text</div>
+                </div>
+                <a
+                  href="https://www.researchgate.net/profile/Sumeet-Bajaj"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Open
+                </a>
+              </div>
 
-        <!-- OFFICIAL LINKS -->
-        <div class="card">
-          <h3 style="margin-bottom:12px;">Official IDs & Profiles</h3>
+              <div class="id-row">
+                <div>
+                  <div class="id-label">Google Scholar</div>
+                  <div class="id-secondary">Citations &amp; metrics</div>
+                </div>
+                <a
+                  href="https://scholar.google.com/citations?user=rT7NqgMAAAAJ"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Open
+                </a>
+              </div>
 
-          <div class="link-row">
-            <span>ORCID</span>
-            <a
-              href="https://orcid.org/0009-0003-4129-0614"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Open</a
-            >
+              <div class="id-row">
+                <div>
+                  <div class="id-label">LinkedIn</div>
+                  <div class="id-secondary">@sbajaj5</div>
+                </div>
+                <a
+                  href="https://www.linkedin.com/in/sbajaj5"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Open
+                </a>
+              </div>
+
+              <div class="id-row">
+                <div>
+                  <div class="id-label">GitHub</div>
+                  <div class="id-secondary">@phr-vault</div>
+                </div>
+                <a
+                  href="https://github.com/phr-vault"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Open
+                </a>
+              </div>
+            </div>
           </div>
+        </section>
 
-          <div class="link-row">
-            <span>ResearchGate</span>
-            <a
-              href="https://www.researchgate.net/publication/398154413_Patient_Perceptions_of_Blockchain-Based_Personal_Health_Records_Qualitative_Insights_on_Security_Trust_and_Data_Control"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Open</a
-            >
+        <!-- Certifications / extras -->
+        <section class="card sidebar-card">
+          <div class="card-inner">
+            <div class="sidebar-heading">Certifications &amp; Extras</div>
+            <p style="font-size: 12px; color: var(--text-muted); line-height: 1.6;">
+              • Certified Blockchain Expert™ – Blockchain Council<br />
+              • Certified JavaScript Developer I – Salesforce
+            </p>
+
+            <div class="footer-note">
+              Built with ❤️ on
+              <a href="https://github.com/phr-vault/sumeet-bajaj.github.io" target="_blank" rel="noopener noreferrer">
+                GitHub Pages
+              </a>
+            </div>
           </div>
-
-          <div class="link-row">
-            <span>Google Scholar</span>
-            <a
-              href="https://scholar.google.com/citations?user=rT7NqgMAAAAJ"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Open</a
-            >
-          </div>
-
-          <div class="link-row">
-            <span>LinkedIn</span>
-            <a
-              href="https://www.linkedin.com/in/sbajaj5/"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Open</a
-            >
-          </div>
-        </div>
-
-        <!-- AREAS OF INTEREST -->
-        <div class="card">
-          <h3 style="margin-bottom:12px;">Areas of Interest</h3>
-
-          <p>Blockchain for healthcare & PHRs</p>
-          <p>Patient-centric system design</p>
-          <p>Web3 data governance & access control</p>
-          <p>Security, privacy, and trust models</p>
-          <p>Real-world implementations of PHR Vault</p>
-        </div>
-      </div>
+        </section>
+      </aside>
     </div>
-
-    <!-- FOOTER -->
-    <footer>
-      <div>© 2025 Dr. Sumeet Bajaj · Blockchain & Digital Health</div>
-      <div class="footer-links">
-        <a href="https://github.com/phr-vault" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/sumeet-bajaj/" target="_blank">LinkedIn</a>
-        <a
-          href="https://www.researchgate.net/publication/398154413_Patient_Perceptions_of_Blockchain-Based_Personal_Health_Records_Qualitative_Insights_on_Security_Trust_and_Data_Control"
-          target="_blank"
-          >Research preprint</a
-        >
-      </div>
-    </footer>
   </div>
-
-  <!-- -------------------------------------------------
-       LIGHT / DARK THEME TOGGLE SCRIPT
-  ------------------------------------------------- -->
-  <script>
-    (function () {
-      const body = document.body;
-      const toggle = document.getElementById("themeToggle");
-      const icon = document.getElementById("themeIcon");
-      const label = document.getElementById("themeLabel");
-
-      // Load saved theme if any
-      const savedTheme = localStorage.getItem("sb_theme");
-      if (savedTheme === "light") {
-        body.setAttribute("data-theme", "light");
-        icon.textContent = "☀️";
-        label.textContent = "Light mode";
-      }
-
-      toggle.addEventListener("click", () => {
-        const isLight = body.getAttribute("data-theme") === "light";
-        if (isLight) {
-          body.removeAttribute("data-theme");
-          icon.textContent = "🌙";
-          label.textContent = "Dark mode";
-          localStorage.setItem("sb_theme", "dark");
-        } else {
-          body.setAttribute("data-theme", "light");
-          icon.textContent = "☀️";
-          label.textContent = "Light mode";
-          localStorage.setItem("sb_theme", "light");
-        }
-      });
-    })();
-  </script>
 </body>
 </html>
