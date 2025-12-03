@@ -91,7 +91,7 @@ Everything is structured to support **NIW**, **O-1**, and **research visibility*
 
 ---
 
-## 🤝 Collaborations
+## Collaborations
 
 Open to collaborations in:
 
@@ -105,7 +105,7 @@ feel free to connect via LinkedIn.
 
 ---
 
-## 🔎 SEO / Academic Metadata (NIW + O-1 Optimized)
+## 🔎 SEO / Academic Metadata
 
 **Keywords:**  
 Blockchain PHR Systems, Web3 Healthcare, Digital Health Engineering, Decentralized Identity,  
