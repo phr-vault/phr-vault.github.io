@@ -11,7 +11,7 @@ This website showcases my work in **Web3-based Personal Health Records (PHRs)**,
 
 ## 🧑‍💻 About Me
 
-I am a Software Engineer & Blockchain Health Systems Researcher with 7+ years of experience  
+I am a Software Engineer & Blockchain Health Systems Researcher with 9+ years of experience  
 across Citi, PwC, and Siemens, specializing in:
 
 - Web3 and blockchain-based healthcare systems  
