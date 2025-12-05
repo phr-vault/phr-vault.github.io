@@ -121,7 +121,7 @@ Decentralized Identity, Zero-Trust Architecture, Patient-Centered Data,
 IPFS Storage, Healthcare Cybersecurity, Smart Contracts, Web3 Innovation.
 
 📬 Contact
-LinkedIn: https://www.linkedin.com/in/sbajajs
+LinkedIn: https://www.linkedin.com/in/sbajaj5
 ResearchGate: https://www.researchgate.net/profile/Sumeet-Bajaj
 Google Scholar: https://scholar.google.com/citations?user=rT7NqgMAAAAJ
 ORCID: https://orcid.org/0009-0003-4129-0614
