@@ -1,127 +1,130 @@
-# Dr. Sumeet Bajaj  
-### Blockchain Health Systems • Web3 • Digital Health Innovation
+Dr. Sumeet Bajaj
+Blockchain Health Systems • Web3 • Digital Health Innovation
 
-Welcome to my personal academic and blockchain engineering portfolio.  
-This website showcases my work in **Web3-based Personal Health Records (PHRs)**,  
-**patient-centric data architectures**, and **secure decentralized healthcare systems**.
+Welcome to my personal academic and blockchain engineering portfolio.
+This website showcases my work in Web3-based Personal Health Records (PHRs),
+patient-centered data architectures, and secure decentralized healthcare systems.
 
-🔗 **Live Portfolio Website:** https://phr-vault.github.io  
+🔗 Live Portfolio Website: https://phr-vault.github.io
 
----
+🧑‍💻 About Me
 
-## 🧑‍💻 About Me
+I am a Software Engineer & Blockchain Health Systems Researcher with 9+ years of experience
+across Citi, PwC, and Siemens, building large-scale enterprise platforms and secure digital solutions.
 
-I am a Software Engineer & Blockchain Health Systems Researcher with 9+ years of experience  
-across Citi, PwC, and Siemens, specializing in:
+My PhD research developed a blockchain-enabled Personal Health Record (PHR) system,
+focused on:
 
-- Web3 and blockchain-based healthcare systems  
-- Personal Health Records (PHRs)  
-- Decentralized identity & access control  
-- Zero-trust security models  
-- Digital health system architectures  
-- Cloud-native full-stack development  
+- Patient-owned medical data
+- Zero-trust access models
+- Blockchain-based access control
+- Web3 governance
+- IPFS decentralized storage
+- High-assurance healthcare data security
 
-My PhD research developed a **blockchain-enabled Personal Health Record (PHR) system** with  
-a strong focus on **patient-owned data**, **fine-grained access control**, **trust**, **security**,  
-and **Web3-based governance** for healthcare.
+My work bridges software engineering, blockchain systems, cybersecurity,
+and digital health innovation.
 
----
+🔬 Research & Publications
+Patient Perceptions of Blockchain-Based Personal Health Records (2025)
 
-## 🔬 Research & Publications
+University of the Cumberlands – Interpretative Phenomenological Analysis (IPA)
 
-### **Patient Perceptions of Blockchain-Based Personal Health Records** (2025)  
-*University of the Cumberlands – Interpretative Phenomenological Analysis (IPA)*
+This qualitative study explores how patients perceive security, trust, efficiency, and usability
+when blockchain is integrated into Personal Health Record systems.
 
-Explores how patients perceive **security**, **efficiency**, **trust**, and **usability** when  
-blockchain is introduced into Personal Health Record systems.
-
-📄 **ResearchGate:**  
+📄 ResearchGate:
 https://www.researchgate.net/publication/398154413_Patient_Perceptions_of_Blockchain-Based_Personal_Health_Records_Qualitative_Insights_on_Security_Trust_and_Data_Control
 
-📚 **Google Scholar:**  
+📚 Google Scholar:
 https://scholar.google.com/citations?user=rT7NqgMAAAAJ
 
-🟩 **ORCID:**  
-https://orcid.org/0009-0003-4129-0614  
+🟩 ORCID:
+https://orcid.org/0009-0003-4129-0614
 
----
+Why This Work Matters
 
-## 🔧 Projects & Prototypes
+• Blockchain-enabled PHR systems address critical U.S. healthcare challenges
+• Fragmented medical records
+• Poor interoperability
+• Cybersecurity vulnerabilities
+• Lack of transparent data access
+• Limited patient control
 
-### **PHR Vault – Web3-Based Personal Health Record Prototype**  
-A decentralized PHR system demonstrating:
+This research contributes to:
 
-- Patient-owned health data  
-- Blockchain-based access control  
-- Web3 governance  
-- Secure decentralized storage (IPFS)  
-- Healthcare data transparency  
+- Modernizing national health IT infrastructure
+- Improving patient autonomy & consent
+- Reducing healthcare breach risks
+- Strengthening U.S. cybersecurity resilence
+- Advancing Web3-based digital health innovation
 
-📂 **Project Repository:**  
+This aligns with U.S. priorities in digital health, cybersecurity,
+and next-generation health information systems.
+
+🏆 Evidence of Original Contribution
+
+The PHR Vault system demonstrates:
+
+A novel Web3 architecture integrating Solidity + IPFS + Zero-Trust models
+A working blockchain prototype (rare in health informatics research)
+Original scientific contribution validated through ResearchGate & Scholar
+
+Independent engineering design with measurable impact
+
+A prototype suitable for real-world health system integration
+
+This repository serves as a public record of extraordinary technical ability
+in blockchain-enabled healthcare systems.
+
+🔧 Projects & Prototypes
+PHR Vault – Web3 Personal Health Record System
+
+A decentralized PHR prototype demonstrating:
+
+- Patient-owned data
+- Smart contract–based access control
+- Web3 authentication and governance
+- IPFS decentralized storage
+- End-to-end transparency & auditability
+
+📂 Prototype Repository:
 https://github.com/phr-vault/phr-vault
 
-➡️ Integrated into my research work and academic publication.
+Integrated into my PhD research and publication.
 
----
+📑 Portfolio Website Content
 
-## 📑 Portfolio Website Contents
+This portfolio includes:
 
-This website contains:
+- Web3 PHR Vault prototype
+- Research publications
+- System architecture diagrams
+- Academic documentation
+- Resume
+- Blockchain engineering projects
 
-- PHR Vault prototype  
-- Research publications  
-- Full-stack & blockchain projects  
-- Academic profile  
-- Resume (PDF)  
-- Web3 engineering portfolio  
+🛠 Technical Focus
 
-Everything is structured to support **NIW**, **O-1**, and **research visibility**.
+- Blockchain (EVM, Solidity, Web3.js / Ethers.js)
+- Decentralized identity & zero-trust security
+- Web3 healthcare architectures
+- Digital health interoperability
+- IPFS decentralized storage
+- React, Next.js, Node.js
+- AWS & cloud-native platforms
 
----
+🔎 SEO / Academic Metadata
+Keywords:
+Blockchain PHR Systems, Web3 Healthcare, Digital Health Engineering,
+Decentralized Identity, Zero-Trust Architecture, Patient-Centered Data,
+IPFS Storage, Healthcare Cybersecurity, Smart Contracts, Web3 Innovation.
 
-## 🛠 Technical Focus
+📬 Contact
+LinkedIn: https://www.linkedin.com/in/sbajajs
+ResearchGate: https://www.researchgate.net/profile/Sumeet-Bajaj
+Google Scholar: https://scholar.google.com/citations?user=rT7NqgMAAAAJ
+ORCID: https://orcid.org/0009-0003-4129-0614
 
-- Blockchain (EVM, Solidity, Web3.js)  
-- Zero-trust security & decentralized identity  
-- Digital health architecture  
-- React, Next.js, Node.js  
-- AWS, cloud-native systems  
-- Microservices & backend engineering  
-- IPFS-based storage models  
-
----
-
-## Collaborations
-
-Open to collaborations in:
-
-- Web3 healthcare systems  
-- Digital health innovation  
-- Blockchain engineering  
-- Decentralized identity & data governance  
-
-If you are working on **patient-centered data**, **health tech innovation**, or **blockchain for healthcare**,  
-feel free to connect via LinkedIn.
-
----
-
-## 🔎 SEO / Academic Metadata
-
-**Keywords:**  
-Blockchain PHR Systems, Web3 Healthcare, Digital Health Engineering, Decentralized Identity,  
-Zero-Trust Architecture, Patient-Centric Data, IPFS Storage, Web3 Security, Healthcare Data Governance,  
-Blockchain Research, Web3 Innovation.
-
----
-
-## 📬 Contact
-
-- LinkedIn: https://www.linkedin.com/in/sbajajs  
-- ResearchGate: https://www.researchgate.net/profile/Sumeet-Bajaj
-- Google Scholar: https://scholar.google.com/citations?user=rT7NqgMAAAAJ  
-- ORCID: https://orcid.org/0009-0003-4129-0614
-
----
-
-© 2025 Dr. Sumeet Bajaj  
+© 2025 Dr. Sumeet Bajaj
 Blockchain Health Systems • Web3 • Digital Health Innovation
