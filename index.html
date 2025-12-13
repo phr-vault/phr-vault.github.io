@@ -36,30 +36,18 @@
       --blur-strong: blur(26px);
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html,
-    body {
-      height: 100%;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
 
     body {
-      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        sans-serif;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background: var(--bg-gradient);
       color: var(--text-main);
       -webkit-font-smoothing: antialiased;
       padding: 24px 16px 40px;
     }
 
-    .page-shell {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+    .page-shell { max-width: 1200px; margin: 0 auto; }
 
     /* Subtle vignette + glow */
     body::before,
@@ -89,12 +77,8 @@
     }
 
     @media (max-width: 900px) {
-      .layout-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-      body {
-        padding: 16px 12px 32px;
-      }
+      .layout-grid { grid-template-columns: minmax(0, 1fr); }
+      body { padding: 16px 12px 32px; }
     }
 
     /* Generic card */
@@ -119,10 +103,7 @@
       pointer-events: none;
     }
 
-    .card-inner {
-      position: relative;
-      z-index: 1;
-    }
+    .card-inner { position: relative; z-index: 1; }
 
     /* Header / hero */
     .header-row {
@@ -133,11 +114,7 @@
       margin-bottom: 18px;
     }
 
-    .name-block {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
+    .name-block { display: flex; flex-direction: column; gap: 4px; }
 
     .name-block h1 {
       font-size: 28px;
@@ -146,11 +123,7 @@
       color: var(--text-heading);
     }
 
-    .subtitle {
-      font-size: 14px;
-      color: var(--accent);
-      font-weight: 500;
-    }
+    .subtitle { font-size: 14px; color: var(--accent); font-weight: 500; }
 
     .availability-pill {
       display: inline-flex;
@@ -175,13 +148,8 @@
     }
 
     @media (max-width: 600px) {
-      .header-row {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .name-block h1 {
-        font-size: 24px;
-      }
+      .header-row { flex-direction: column; align-items: flex-start; }
+      .name-block h1 { font-size: 24px; }
     }
 
     /* Hero main title */
@@ -193,9 +161,7 @@
       color: var(--text-heading);
     }
 
-    .hero-highlight {
-      color: var(--accent-strong);
-    }
+    .hero-highlight { color: var(--accent-strong); }
 
     .hero-text {
       font-size: 14px;
@@ -227,6 +193,127 @@
       border-color: rgba(56, 189, 248, 0.8);
       color: var(--accent-strong);
       background: var(--accent-soft);
+    }
+
+    /* ✅ Make tags clickable + feel premium */
+    .tag-btn {
+      appearance: none;
+      outline: none;
+      cursor: pointer;
+      transition: all 0.15s ease-out;
+      user-select: none;
+    }
+    .tag-btn:hover {
+      border-color: rgba(56, 189, 248, 0.85);
+      color: var(--accent-strong);
+      background: rgba(56, 189, 248, 0.12);
+    }
+    .tag-btn:focus-visible {
+      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.25);
+    }
+    .tag-btn.is-active {
+      border-color: rgba(56, 189, 248, 0.9);
+      color: var(--accent-strong);
+      background: rgba(56, 189, 248, 0.16);
+    }
+
+    /* ✅ Dynamic panel under tags */
+    .focus-panel {
+      margin-top: 10px;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      background: rgba(2, 6, 23, 0.45);
+      padding: 14px 16px;
+      overflow: hidden;
+    }
+
+    .focus-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 6px;
+    }
+
+    .focus-title h3 {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-heading);
+    }
+
+    .focus-badge {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      color: var(--accent-strong);
+      white-space: nowrap;
+    }
+
+    .focus-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.55;
+      margin-bottom: 10px;
+      max-width: 720px;
+    }
+
+    .focus-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 10px;
+    }
+    @media (max-width: 700px) {
+      .focus-grid { grid-template-columns: minmax(0, 1fr); }
+    }
+
+    .focus-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    .focus-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .focus-list .dot {
+      margin-top: 6px;
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: rgba(56, 189, 248, 0.85);
+      box-shadow: 0 0 12px rgba(56, 189, 248, 0.25);
+      flex: 0 0 6px;
+    }
+
+    .focus-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+      font-size: 12px;
+    }
+    .focus-actions a {
+      color: var(--accent-strong);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .focus-actions a:hover { text-decoration: underline; }
+
+    .tab-pane { display: none; }
+    .tab-pane.is-active { display: block; animation: fadeIn 0.35s ease-out; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     /* Buttons */
@@ -277,10 +364,7 @@
       background: rgba(15, 23, 42, 0.95);
     }
 
-    .btn span.icon {
-      font-size: 15px;
-      line-height: 1;
-    }
+    .btn span.icon { font-size: 15px; line-height: 1; }
 
     /* Section title */
     .section-title {
@@ -300,9 +384,7 @@
     }
 
     @media (max-width: 900px) {
-      .two-col-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
+      .two-col-grid { grid-template-columns: minmax(0, 1fr); }
     }
 
     .pill-label {
@@ -369,14 +451,10 @@
       gap: 6px;
     }
 
-    .card-link:hover {
-      text-decoration: underline;
-    }
+    .card-link:hover { text-decoration: underline; }
 
     /* Sidebar */
-    .sidebar-card + .sidebar-card {
-      margin-top: 16px;
-    }
+    .sidebar-card + .sidebar-card { margin-top: 16px; }
 
     .sidebar-heading {
       font-size: 13px;
@@ -403,21 +481,10 @@
       background: #020617;
     }
 
-    .avatar img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+    .avatar img { width: 100%; height: 100%; object-fit: cover; }
 
-    .profile-meta-line {
-      font-size: 12px;
-      color: var(--text-muted);
-      margin-bottom: 4px;
-    }
-
-    .profile-meta-label {
-      color: var(--text-soft);
-    }
+    .profile-meta-line { font-size: 12px; color: var(--text-muted); margin-bottom: 4px; }
+    .profile-meta-label { color: var(--text-soft); }
 
     .id-list {
       display: flex;
@@ -439,15 +506,8 @@
       color: var(--text-muted);
     }
 
-    .id-label {
-      font-weight: 500;
-      color: var(--text-main);
-    }
-
-    .id-secondary {
-      font-size: 11px;
-      color: var(--text-soft);
-    }
+    .id-label { font-weight: 500; color: var(--text-main); }
+    .id-secondary { font-size: 11px; color: var(--text-soft); }
 
     .id-row a {
       font-size: 11px;
@@ -459,9 +519,7 @@
       border: 1px solid rgba(56, 189, 248, 0.4);
     }
 
-    .id-row a:hover {
-      background: rgba(15, 23, 42, 1);
-    }
+    .id-row a:hover { background: rgba(15, 23, 42, 1); }
 
     /* Experience / skills */
     .experience-list {
@@ -478,32 +536,12 @@
       background: rgba(15, 23, 42, 0.96);
     }
 
-    .exp-role {
-      font-weight: 500;
-      color: var(--text-main);
-      margin-bottom: 2px;
-    }
+    .exp-role { font-weight: 500; color: var(--text-main); margin-bottom: 2px; }
+    .exp-org { font-size: 12px; color: var(--text-soft); }
+    .exp-meta { font-size: 11px; color: var(--text-soft); margin-top: 3px; }
 
-    .exp-org {
-      font-size: 12px;
-      color: var(--text-soft);
-    }
-
-    .exp-meta {
-      font-size: 11px;
-      color: var(--text-soft);
-      margin-top: 3px;
-    }
-
-    .exp-bullets {
-      margin-top: 4px;
-      padding-left: 14px;
-      color: var(--text-muted);
-    }
-
-    .exp-bullets li {
-      margin-bottom: 2px;
-    }
+    .exp-bullets { margin-top: 4px; padding-left: 14px; color: var(--text-muted); }
+    .exp-bullets li { margin-bottom: 2px; }
 
     .skill-chips {
       display: flex;
@@ -528,16 +566,11 @@
       text-align: right;
     }
 
-    .footer-note a {
-      color: var(--accent-strong);
-      text-decoration: none;
-    }
-
-    .footer-note a:hover {
-      text-decoration: underline;
-    }
+    .footer-note a { color: var(--accent-strong); text-decoration: none; }
+    .footer-note a:hover { text-decoration: underline; }
   </style>
 </head>
+
 <body>
   <div class="page-shell">
     <div class="layout-grid">
@@ -569,12 +602,13 @@
               infrastructure for digital health.
             </p>
 
-            <div class="tags-row">
-              <span class="tag accent">Blockchain PHRs</span>
-              <span class="tag">Digital Health</span>
-              <span class="tag">Web3 &amp; DeFi</span>
-              <span class="tag">Cybersecurity</span>
-              <span class="tag">Qualitative Research</span>
+            <!-- ✅ CLICKABLE + DYNAMIC TAGS -->
+            <div class="tags-row" role="tablist" aria-label="Focus areas">
+              <button class="tag tag-btn is-active" type="button" role="tab" aria-selected="true" aria-controls="tab-phr" data-tab="phr">Blockchain PHRs</button>
+              <button class="tag tag-btn" type="button" role="tab" aria-selected="false" aria-controls="tab-digital" data-tab="digital">Digital Health</button>
+              <button class="tag tag-btn" type="button" role="tab" aria-selected="false" aria-controls="tab-web3" data-tab="web3">Web3 &amp; DeFi</button>
+              <button class="tag tag-btn" type="button" role="tab" aria-selected="false" aria-controls="tab-cyber" data-tab="cyber">Cybersecurity</button>
+              <button class="tag tag-btn" type="button" role="tab" aria-selected="false" aria-controls="tab-qual" data-tab="qual">Qualitative Research</button>
             </div>
 
             <div class="button-row">
@@ -616,10 +650,130 @@
               </a>
             </div>
 
-            
             <p style="margin-top:10px;font-size:12px;color:var(--text-soft);line-height:1.45;">
               Prototype demo runs in-browser and simulates encrypted PHR storage, access control, and audit logging. No real patient data is used.
             </p>
+
+            <!-- ✅ DYNAMIC CONTENT PANEL (changes when chips are clicked) -->
+            <div class="focus-panel" aria-live="polite">
+              <div class="tab-pane is-active" id="tab-phr" role="tabpanel">
+                <div class="focus-title">
+                  <h3>Blockchain-Based Personal Health Records (PHR)</h3>
+                  <span class="focus-badge">Primary Focus</span>
+                </div>
+                <p class="focus-desc">
+                  Patient-owned PHR systems that use blockchain for access control, auditability, and integrity—paired with encrypted off-chain storage for privacy.
+                </p>
+                <div class="focus-grid">
+                  <ul class="focus-list">
+                    <li><span class="dot"></span>Consent-driven access permissions (patient-controlled)</li>
+                    <li><span class="dot"></span>Encrypted storage + on-chain proofs for integrity</li>
+                    <li><span class="dot"></span>Audit logging and traceability for access events</li>
+                  </ul>
+                  <ul class="focus-list">
+                    <li><span class="dot"></span>Threat modeling aligned with healthcare data risks</li>
+                    <li><span class="dot"></span>Patient-centric UX for record sharing workflows</li>
+                    <li><span class="dot"></span>Prototype engineering: smart contracts + web app</li>
+                  </ul>
+                </div>
+                <div class="focus-actions">
+                  <a href="https://phr-vault.github.io/prototype/" target="_blank" rel="noopener noreferrer">→ Open Live Prototype</a>
+                  <a href="https://github.com/phr-vault/prototype" target="_blank" rel="noopener noreferrer">→ View Code on GitHub</a>
+                </div>
+              </div>
+
+              <div class="tab-pane" id="tab-digital" role="tabpanel">
+                <div class="focus-title">
+                  <h3>Digital Health Systems</h3>
+                  <span class="focus-badge">Platforms &amp; UX</span>
+                </div>
+                <p class="focus-desc">
+                  Scalable digital health experiences with emphasis on usability, data integrity, and system interoperability across real-world environments.
+                </p>
+                <div class="focus-grid">
+                  <ul class="focus-list">
+                    <li><span class="dot"></span>Patient-centric workflows and accessibility-first UI</li>
+                    <li><span class="dot"></span>Secure onboarding and identity-aware experiences</li>
+                    <li><span class="dot"></span>Cloud-native patterns for reliability &amp; scale</li>
+                  </ul>
+                  <ul class="focus-list">
+                    <li><span class="dot"></span>Interoperability mindset (records &amp; data exchange)</li>
+                    <li><span class="dot"></span>Observability: logging, metrics, and audit trails</li>
+                    <li><span class="dot"></span>High-trust design for healthcare decision support</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="tab-pane" id="tab-web3" role="tabpanel">
+                <div class="focus-title">
+                  <h3>Web3 &amp; DeFi</h3>
+                  <span class="focus-badge">Architecture</span>
+                </div>
+                <p class="focus-desc">
+                  Web3 application architecture, wallet-based flows, and decentralized trust models—applied responsibly for real-world utility.
+                </p>
+                <div class="focus-grid">
+                  <ul class="focus-list">
+                    <li><span class="dot"></span>Smart contract integrations and security-aware UX</li>
+                    <li><span class="dot"></span>Transaction lifecycle: signing, validation, settlement</li>
+                    <li><span class="dot"></span>On-chain/off-chain design tradeoffs</li>
+                  </ul>
+                  <ul class="focus-list">
+                    <li><span class="dot"></span>DeFi primitives &amp; risk models (high-level)</li>
+                    <li><span class="dot"></span>Decentralized governance and access patterns</li>
+                    <li><span class="dot"></span>Applied Web3 for healthcare data governance</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="tab-pane" id="tab-cyber" role="tabpanel">
+                <div class="focus-title">
+                  <h3>Cybersecurity</h3>
+                  <span class="focus-badge">Zero Trust</span>
+                </div>
+                <p class="focus-desc">
+                  Security architecture for sensitive systems: encryption, identity, access control, and auditable operations—aligned with modern zero-trust principles.
+                </p>
+                <div class="focus-grid">
+                  <ul class="focus-list">
+                    <li><span class="dot"></span>Access control models and least-privilege enforcement</li>
+                    <li><span class="dot"></span>Encryption strategy and secure data handling</li>
+                    <li><span class="dot"></span>Audit logging, monitoring, and anomaly detection</li>
+                  </ul>
+                  <ul class="focus-list">
+                    <li><span class="dot"></span>Threat modeling for real-world systems</li>
+                    <li><span class="dot"></span>Secure SDLC practices and reliability testing</li>
+                    <li><span class="dot"></span>Security-first UI/UX decisions</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="tab-pane" id="tab-qual" role="tabpanel">
+                <div class="focus-title">
+                  <h3>Qualitative Research</h3>
+                  <span class="focus-badge">PhD Work</span>
+                </div>
+                <p class="focus-desc">
+                  Qualitative analysis on how patients perceive security, privacy, efficiency, and patient-centeredness in blockchain-based PHR designs.
+                </p>
+                <div class="focus-grid">
+                  <ul class="focus-list">
+                    <li><span class="dot"></span>Patient perception themes: trust, control, readiness</li>
+                    <li><span class="dot"></span>Security/privacy perceptions and adoption drivers</li>
+                    <li><span class="dot"></span>Design implications for patient-centered systems</li>
+                  </ul>
+                  <ul class="focus-list">
+                    <li><span class="dot"></span>Links to preprints and citation profiles</li>
+                    <li><span class="dot"></span>Evidence-backed narrative for NIW/O-1 alignment</li>
+                    <li><span class="dot"></span>Research → prototype translation mindset</li>
+                  </ul>
+                </div>
+                <div class="focus-actions">
+                  <a href="https://scholar.google.com/citations?user=rT7NqgMAAAAJ" target="_blank" rel="noopener noreferrer">→ Google Scholar</a>
+                  <a href="https://www.researchgate.net/profile/Sumeet-Bajaj" target="_blank" rel="noopener noreferrer">→ ResearchGate</a>
+                </div>
+              </div>
+            </div>
 
             <!-- Research + Projects -->
             <div class="two-col-grid">
@@ -933,6 +1087,7 @@
                   Open
                 </a>
               </div>
+
               <div class="id-row">
                 <div>
                   <div class="id-label">PHR Vault Prototype</div>
@@ -961,13 +1116,50 @@
             </p>
 
             <div class="footer-note">
-                  Showcasing research, publications, and Web3 healthcare engineering by Dr. Sumeet Bajaj.
-            </div>
+              Showcasing research, publications, and Web3 healthcare engineering by Dr. Sumeet Bajaj.
             </div>
           </div>
         </section>
       </aside>
     </div>
   </div>
+
+  <!-- ✅ Tiny JS: makes the chips switch content -->
+  <script>
+    (function () {
+      const tabs = Array.from(document.querySelectorAll(".tag-btn"));
+      const panes = Array.from(document.querySelectorAll(".tab-pane"));
+
+      function activate(tabKey) {
+        tabs.forEach(btn => {
+          const isActive = btn.dataset.tab === tabKey;
+          btn.classList.toggle("is-active", isActive);
+          btn.setAttribute("aria-selected", String(isActive));
+        });
+
+        panes.forEach(pane => {
+          const isActive = pane.id === ("tab-" + tabKey);
+          pane.classList.toggle("is-active", isActive);
+        });
+      }
+
+      tabs.forEach(btn => {
+        btn.addEventListener("click", () => {
+          activate(btn.dataset.tab);
+        });
+
+        // keyboard support (Enter / Space)
+        btn.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            activate(btn.dataset.tab);
+          }
+        });
+      });
+
+      // default state
+      activate("phr");
+    })();
+  </script>
 </body>
 </html>
